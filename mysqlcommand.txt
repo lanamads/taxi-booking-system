@@ -1,0 +1,45 @@
+//File mysqlcommand.txt
+//Student: 19079062 scc1338
+//This file contains sql commands used to create the database
+
+//Connect to database
+use scc1338;
+
+//booking.php SQL strings:----------------------------------------------------------------------------------
+//Create the bookings table if it doesn't already exist
+CREATE table IF NOT EXISTS bookings 
+	(bkref VARCHAR(8) PRIMARY KEY,
+	cname VARCHAR(50) NOT NULL,
+	phone VARCHAR(12) NOT NULL,
+	unumber VARCHAR(10),
+	snumber VARCHAR(10) NOT NULL,
+	stname VARCHAR(30) NOT NULL,
+	sbname VARCHAR(30),
+	dsbname VARCHAR(30),
+	date DATE NOT NULL,
+	time TIME NOT NULL,
+	status VARCHAR(30) DEFAULT 'unassigned',
+	generated_bkdate DATE NOT NULL,
+	generated_bktime TIME NOT NULL);
+
+
+//Select booking references from table to get the highest booking reference number
+SELECT bkref FROM bookings ORDER BY bkref DESC LIMIT 1;
+
+//Insert booking request into bookings table
+INSERT INTO bookings (bkref, cname, phone, unumber, snumber, stname, sbname, dsbname, date, time, status)
+                	VALUES ('$bkref', '$cname', '$phone', '$unumber', '$snumber', '$stname', '$sbname', '$dsbname', '$date', '$time', 'unassigned');
+
+//admin.php SQL strings:----------------------------------------------------------------------------------
+//Select booking data matching search string's booking reference
+SELECT bkref, cname, phone, sbname, dsbname, 
+	CONCAT(DATE_FORMAT(date, '%d/%m/%Y'), ' ', TIME_FORMAT(time, '%H:%i'))
+	AS pickup_datetime, status 
+	FROM bookings WHERE bkref='$bsearch;
+
+//Select booking data with an unassigned booking status in next 2 hours
+SELECT bkref, cname, phone, sbname, dsbname, 
+	CONCAT(DATE_FORMAT(date, '%d/%m/%Y'), ' ', TIME_FORMAT(time, '%H:%i'))
+	AS pickup_datetime, status  
+	FROM bookings WHERE status = 'unassigned' AND
+	CONCAT(date, ' ', time) BETWEEN NOW() and DATE_ADD(NOW(), INTERVAL 2 HOUR);

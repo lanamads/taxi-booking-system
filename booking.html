@@ -1,0 +1,64 @@
+<!--File: booking.html-->
+<!--Student: 19079062 scc1338-->
+<!--This file takes inputs from the user to create a taxi booking request-->
+
+<HTML XMLns="http://www.w3.org/1999/xHTML"> 
+  <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CabsOnline - Booking</title> 
+    <script type="text/javascript" src="booking.js"> </script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head> 
+  <body>
+  <H1>CabsOnline: Create Booking Request</H1>
+	<!--Form to create a taxi booking request-->
+	<form id="bookingForm">
+
+	<!--Text input from user for customer name-->
+	    <label>Customer Name:  <input type="text" name="cname" required 
+	oninvalid="this.setCustomValidity('Please enter customer name.')"
+	oninput="this.setCustomValidity('')"></label><br>
+
+	<!--Text input from user for phone number-->
+ 	    <label>Phone Number: <input type="text" name="phone" pattern="[0-9]{10,12}" required 
+	oninvalid="this.setCustomValidity('Please enter a valid phone number (10-12 digits).')"
+	oninput="this.setCustomValidity('')"></label><br>
+
+	<!--Text input from user for unit number-->
+	    <label>Unit Number: <input type="text" name="unumber"></label><br>
+
+	<!--Text input from user for street number-->
+	    <label>Street Number: <input type="text" name="snumber" required 
+	oninvalid="this.setCustomValidity('Please enter street number.')"
+	oninput="this.setCustomValidity('')"></label><br>
+
+	<!--Text input from user for street name-->
+	    <label>Street Name: <input type="text" name="stname" required 
+	oninvalid="this.setCustomValidity('Please enter street name.')"
+	oninput="this.setCustomValidity('')"></label><br>
+
+	<!--Text input from user for pickup suburb-->
+	    <label>Suburb: <input type="text" name="sbname"></label><br>
+
+	<!--Text input from user for destination suburb-->
+	    <label>Destination Suburb: <input type="text" name="dsbname"></label><br>
+
+	<!--Date input from user for pickup date-->
+	    <label>Pickup Date: <input type="date" name="date" id="pickupDate" required 
+	oninvalid="this.setCustomValidity('Please select a valid pickup date')"
+	onblur="checkPickupDateTimeValidity()"></label><br>
+
+	<!--Time input from user for pickup time-->
+	    <label>Pickup Time: <input type="time" name="time" id="pickupTime" required 
+	oninvalid="this.setCustomValidity('Please select a valid pickup time')"
+	onblur="checkPickupDateTimeValidity()"></label><br>
+
+	<!--Button calling js function to create a booking request-->
+	    <input name="submit" type = "button" onClick = "createBookingRequest('booking.php', 'reference')" value = "Create booking">
+	</form>
+
+	<div id="reference">
+	    <!--The fetched booking reference will go here.-->
+	</div> 
+ </body> 
+</HTML>
