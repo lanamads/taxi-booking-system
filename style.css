@@ -1,0 +1,153 @@
+/* File: style.css */
+/* Student: 19079062 scc1338 */
+/* This file is referenced in booking.html and admin.html to style the pages */
+
+/* Overall page styling */
+body {
+  	color: black;
+	background: #EEE1EB;
+  	font-family: andale mono, monospace;
+	margin: 0;
+	padding: 10px;
+  	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Styling for main headings */
+h1 {
+  	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-shadow: 3px 3px 1px #E2687F,
+		-1px -1px 3px #E2687F;
+  	margin-bottom: 2ex;
+}
+
+/* Booking confirmation reference */
+#reference {
+	width: 75%;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+	border-radius: 20px;
+	text-align: center;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Booking search content */
+#content {
+	width: 75%;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+	border-radius: 20px;
+	text-align: center;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form container */
+form {
+	text-align: left;
+	width: 75%;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+	border-radius: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling for form */
+form label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+/* Input styling for form */
+form input[type="text"],
+form input[type="date"],
+form input[type="time"] {
+	width: calc(100% - 10px);
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+/* Styling for submit button */
+form input[type="button"] {
+	background-color: #E2687F;
+	border-radius: 5px;
+	border: none;
+    	color: #fff;
+	padding: 10px 20px;
+    	cursor: pointer;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+/* Hover styling for submit button */
+form input[type="button"]:hover {
+	background-color: #FFA3B2;
+}
+
+/* Styling for table */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-family: Arial, sans-serif;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+	padding: 12px;
+	text-align: left;
+}
+
+table th {
+	background-color: #E2687F;
+	color: white;
+	font-weight: bold;
+	border-bottom: 2px solid #ddd;
+}
+
+table td {
+	border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+table tr:hover {
+	background-color: #ddd;
+}
+
+/* Styling for the assign button */
+button {
+	background-color: #E2687F;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+button: hover:not(:disabled) {
+	background-color: #FFA3B2;
+}
