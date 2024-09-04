@@ -1,0 +1,31 @@
+<!--File: admin.html-->
+<!--Student: 19079062 scc1338-->
+<!--This html file allows admins of CabsOnline to search the taxi booking requests-->
+
+<HTML XMLns="http://www.w3.org/1999/xHTML"> 
+  <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CabsOnline - Admin</title> 
+    <script type="text/javascript" src="admin.js"> </script>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head> 
+  <body>
+  <H1>CabsOnline: Booking Request Search</H1>
+	<!-- Form to input a booking search request-->
+	<form id="searchForm">
+
+	 <!-- Text input from user -->
+	<label>Booking Reference: <input type="text" name="bsearch"> </label>
+
+	<!--Button calling js function to search for a booking-->
+	<input name="sbutton" type="button" onClick="searchRequest('admin.php', 'content', bsearch.value)" value="Search"> 
+	</form>
+
+	<br>
+
+	<div id="content" class="content">
+	<p id="message"></p> <!--The confirmation message will be displayed here-->
+	    <!--The fetched booking table will go here.-->
+	</div> 
+ </body> 
+</HTML>
